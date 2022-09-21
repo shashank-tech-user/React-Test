@@ -1,21 +1,18 @@
 import React from 'react';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import RoutingComponent from '../auth_routes/route-component';
 import Layout from '../components/layout';
-import Home from "./home";
-import Favorite from "./favorites";
-import Mybook from "./mybooks";
+import { AuthProvide } from "../context";
 
 const WebPages = () => {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorite />} />
-          <Route path="/my-books" element={<Mybook />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <AuthProvide>
+      <BrowserRouter>
+        <Layout>
+          <RoutingComponent />
+        </Layout>
+      </BrowserRouter>
+    </AuthProvide>
   )
 }
 

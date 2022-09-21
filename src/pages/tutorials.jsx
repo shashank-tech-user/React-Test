@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchTutorial } from '../routes/api_call/tutorials';
 
-const Favorites = () => {
+const Tutorials = () => {
   useEffect(() => {
     (async() => {
       const list = await fetchTutorial();
@@ -14,8 +14,8 @@ const Favorites = () => {
   }, []);
 
   return (
-    <div>This is favorites page.</div>
+    <div>This is tutorials page.</div>
   )
 }
 
-export default Favorites
+export default Tutorials

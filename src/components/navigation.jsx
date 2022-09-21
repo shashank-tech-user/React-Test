@@ -40,15 +40,15 @@ const Navigation = () => {
   return (
     <Nav>
       <NavList>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/my-books">My Books</Link>
-        </li>
-        <li>
-          <Link to="/favorites">Favorites</Link>
-        </li>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/my-books">
+          <li>My Books</li>
+        </Link>
+        <Link to="/tutorials">
+          <li>Tutorials</li>
+        </Link>
       </NavList>
     </Nav>
   )

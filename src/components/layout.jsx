@@ -1,13 +1,12 @@
 import React from 'react';
 import Header from "./header";
-import Navigation from './navigation';
+// import Navigation from './navigation';
 import styled from "styled-components";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const Warpper = styled.div`
     @media (min-width: 700px) {
       display: flex;
-      top: 64px;
       position: relative;
       height: calc(100% - 64px);
       width: 100%;
@@ -21,20 +20,18 @@ const Layout = ({children}) => {
     height: calc(100% - 185px);
     width: 100%;
     padding: 1em;
-    overflow-y: scroll;
     @media (min-width: 700px) {
       flex: 1;
-      margin-left: 220px;
-      height: calc(100% - 64px);
-      width: calc(100% - 220px);
+      width: 100%;
     }
   `;
-  
+
+  const token = localStorage.getItem("access_token");
+
   return (
     <>
-      <Header />
+      <Header token={token} />
       <Warpper>
-        <Navigation />
         <Main>
           {children}
         </Main>
